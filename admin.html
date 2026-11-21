@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EMBER & BITE — Admin Panel</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="admin-body">
+
+  <div id="adminLoginScreen" class="admin-login-box">
+    <div class="login-card">
+      <i class="fa-solid fa-shield-halved shield-icon"></i>
+      <h2>Admin Xavfsizlik Tizimi</h2>
+      <p>Davom etish uchun admin login va parolni kiriting</p>
+      <form onsubmit="checkAdminAuth(event)">
+        <input type="text" id="admUser" placeholder="Login (admin)" required autocomplete="off">
+        <input type="password" id="admPass" placeholder="Parol (ember2026)" required>
+        <p id="loginError" class="error-text"></p>
+        <button type="submit" class="btn-primary full-btn">Tizimga kirish</button>
+      </form>
+      <a href="index.html" class="back-link">&larr; Asosiy saytga qaytish</a>
+    </div>
+  </div>
+
+  <div id="adminDashboard" style="display:none;">
+    <header class="navbar">
+      <div class="logo"><i class="fa-solid fa-user-shield"></i> ADMIN<span>PANEL</span></div>
+      <div class="nav-actions">
+        <a href="index.html" target="_blank" class="btn-secondary">Saytni ko‘rish</a>
+        <button onclick="adminLogout()" class="btn-danger">Chiqish</button>
+      </div>
+    </header>
+
+    <div class="section admin-container">
+      <div class="admin-card">
+        <h3><i class="fa-solid fa-plus-circle"></i> Saytga yangi taom qo‘shish</h3>
+        <form onsubmit="addNewFood(event)" class="order-form">
+          <div class="form-row">
+            <input type="text" id="newFoodName" placeholder="Taom nomi (masalan: Mega Cheese Burger)" required>
+            <input type="url" id="newFoodImg" placeholder="Rasm URL manzili (https://...)" required>
+          </div>
+          <input type="text" id="newFoodDesc" placeholder="Taom haqida qisqacha ma'lumot" required>
+          
+          <h4>3 xil variant nomi va narxini kiriting (so‘mda):</h4>
+          <div class="form-row-3">
+            <div>
+              <input type="text" id="v1Name" value="Standart" required>
+              <input type="number" id="v1Price" placeholder="Narxi (masalan: 32000)" required>
+            </div>
+            <div>
+              <input type="text" id="v2Name" value="Double (Katta)" required>
+              <input type="number" id="v2Price" placeholder="Narxi (masalan: 45000)" required>
+            </div>
+            <div>
+              <input type="text" id="v3Name" value="Kombo (Fri + Cola)" required>
+              <input type="number" id="v3Price" placeholder="Narxi (masalan: 55000)" required>
+            </div>
+          </div>
+          <button type="submit" class="btn-primary full-btn">Saytga joylash</button>
+        </form>
+      </div>
+
+      <div class="admin-card">
+        <h3><i class="fa-solid fa-receipt"></i> Mijozlar buyurtmalari (<span id="orderCount">0</span>)</h3>
+        <div id="adminOrdersList" class="admin-list"></div>
+      </div>
+
+      <div class="admin-card">
+        <h3><i class="fa-solid fa-utensils"></i> Barcha taomlar ro‘yxati (<span id="totalFoodCount">0</span>)</h3>
+        <div id="adminFoodList" class="admin-food-grid"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>

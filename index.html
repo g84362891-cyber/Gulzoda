@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EMBER & BITE — Premium Fast Food</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">
+      <i class="fa-solid fa-fire-flame-curved"></i> EMBER<span>&</span>BITE
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Bosh sahifa</a>
+      <a href="#menu">Menyu (20)</a>
+      <a href="#about">Biz haqimizda</a>
+      <a href="#contact">Aloqa</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" onclick="openModal('favModal')" title="Yoqtirganlar">
+        <i class="fa-solid fa-heart"></i>
+        <span class="badge" id="favCount">0</span>
+      </button>
+      <button class="icon-btn" onclick="openModal('cartModal')" title="Savat">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="badge" id="cartCount">0</span>
+      </button>
+      <button class="btn-auth" onclick="openModal('authModal')" id="authBtn">
+        <i class="fa-solid fa-user"></i> <span>Ro‘yxatdan o‘tish</span>
+      </button>
+      <button class="menu-toggle" onclick="toggleMobileMenu()">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO SLIDER (Har 5 soniyada almashadi) -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <span class="tag">🔥 24/7 Tezkor Yetkazib Berish</span>
+      <h1 id="heroTitle">Olovda pishgan haqiqiy Burgerlar</h1>
+      <p id="heroDesc">100% halol mol go‘shti, maxsus pishloqli sous va yangi yopilgan bulochkalar uyg‘unligi.</p>
+      <div class="hero-btns">
+        <a href="#menu" class="btn-primary">Buyurtma berish</a>
+        <a href="#about" class="btn-secondary">Kafe haqida</a>
+      </div>
+      <div class="slider-dots" id="sliderDots"></div>
+    </div>
+    <div class="hero-image-box">
+      <img id="heroImg" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=80" alt="Fast Food">
+    </div>
+  </section>
+
+  <!-- MENYU BO'LIMI -->
+  <section id="menu" class="section">
+    <div class="section-header">
+      <h2>Bizning <span>Maxsus Menyu</span></h2>
+      <p>Har bir taomga 3 xil o‘lcham yoki tarkib variantini tanlashingiz mumkin</p>
+    </div>
+    <div class="food-grid" id="foodGrid"></div>
+  </section>
+
+  <!-- BIZ HAQIMIZDA -->
+  <section id="about" class="section about-section">
+    <div class="about-grid">
+      <div class="about-img">
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80" alt="Ember & Bite Kafesi">
+      </div>
+      <div class="about-text">
+        <span class="tag">Biz haqimizda</span>
+        <h2>EMBER & BITE — Ta'm va Sifat Uyg‘unligi</h2>
+        <p><strong>EMBER & BITE</strong> kafesi 2021-yilda tezkor ovqatlanish madaniyatini yangi bosqichga olib chiqish maqsadida tashkil etilgan. Biz yarim tayyor muzlatilgan mahsulotlardan voz kechib, faqat fermerlardan olingan yangi go‘sht va sabzavotlardan foydalanamiz.</p>
+        <p>Oshxonamizda ochiq olov (gril) texnologiyasi qo‘llaniladi, bu esa har bir burger, lavash va steyk-rollarga o‘zgacha tutunli lazzat beradi. Buyurtmangiz 30 daqiqa ichida issiq holda eshigingizgacha yetkaziladi.</p>
+        <div class="stats">
+          <div><h3>20+</h3><span>Maxsus taomlar</span></div>
+          <div><h3>30 daq</h3><span>O‘rtacha yetkazish</span></div>
+          <div><h3>100%</h3><span>Halol mahsulotlar</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OXIRGI QISM (FOOTER & ALOQA) -->
+  <footer id="contact" class="footer">
+    <div class="footer-grid">
+      <div>
+        <div class="logo"><i class="fa-solid fa-fire-flame-curved"></i> EMBER<span>&</span>BITE</div>
+        <p>Toshkent va O‘zbekiston bo‘ylab eng mazali fast-food tarmog‘i. Har kuni 09:00 dan 03:00 gacha xizmatdamiz.</p>
+      </div>
+      <div>
+        <h4>Aloqa ma'lumotlari</h4>
+        <p><i class="fa-solid fa-phone"></i> +998 (90) 123-45-67</p>
+        <p><i class="fa-solid fa-phone-volume"></i> Qisqa raqam: 1188</p>
+        <p><i class="fa-solid fa-location-dot"></i> Toshkent sh., Amir Temur shoh ko‘chasi, 45-uy</p>
+      </div>
+      <div>
+        <h4>Tezkor havolalar</h4>
+        <p><a href="#menu">Menyu</a></p>
+        <p><a href="#about">Biz haqimizda</a></p>
+        <p><a href="admin.html" target="_blank" style="color: #ff5722;"><i class="fa-solid fa-lock"></i> Admin Panelga kirish</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 EMBER & BITE Fast Food. Barcha huquqlar himoyalangan.
+    </div>
+  </footer>
+
+  <!-- SAVAT VA BUYURTMA BERISH MODALI -->
+  <div class="modal" id="cartModal">
+    <div class="modal-content large-modal">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-bag-shopping"></i> Savatingiz va Buyurtma</h3>
+        <button class="close-btn" onclick="closeModal('cartModal')">&times;</button>
+      </div>
+      <div class="cart-body">
+        <div class="cart-items" id="cartItemsList"></div>
+        <div class="cart-total">Jami to‘lov: <span id="cartTotalPrice">0</span> so‘m</div>
+
+        <form id="orderForm" class="order-form" onsubmit="submitOrder(event)">
+          <h4>Yetkazib berish ma'lumotlari</h4>
+          <div class="form-row">
+            <input type="text" id="custName" placeholder="Ismingizni kiriting" required>
+            <input type="tel" id="custPhone" placeholder="Telefon (+998 90 123 45 67)" required>
+          </div>
+          <div class="form-row">
+            <select id="regionSelect" onchange="updateDistricts()" required>
+              <option value="">Viloyatni tanlang (12 ta viloyat)</option>
+            </select>
+            <select id="districtSelect" required>
+              <option value="">Avval viloyatni tanlang</option>
+            </select>
+          </div>
+
+          <div class="address-toggle">
+            <label><input type="radio" name="addrType" value="manual" checked onchange="toggleAddressMode()"> Qo‘lda manzil kiritish</label>
+            <label><input type="radio" name="addrType" value="map" onchange="toggleAddressMode()"> Google Maps orqali belgilash</label>
+          </div>
+
+          <div id="manualAddressBox">
+            <input type="text" id="manualAddress" placeholder="Ko‘cha nomi, uy raqami, mo‘ljal...">
+          </div>
+
+          <div id="mapAddressBox" style="display:none;">
+            <button type="button" class="btn-map" onclick="getLiveLocation()">
+              <i class="fa-solid fa-location-crosshairs"></i> Mening hozirgi joylashuvimni (GPS) olish
+            </button>
+            <input type="text" id="mapCoords" placeholder="Google Maps havolasi yoki koordinata" readonly>
+            <iframe id="gmapFrame" src="https://maps.google.com/maps?q=Tashkent&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="160" style="border:0; border-radius:8px; margin-top:8px;"></iframe>
+          </div>
+
+          <button type="submit" class="btn-primary full-btn">Buyurtmani tasdiqlash</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- YOQTIRGANLAR (YURAKCHA) MODALI -->
+  <div class="modal" id="favModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-heart" style="color:#ff2a5f;"></i> Yoqtirgan taomlaringiz</h3>
+        <button class="close-btn" onclick="closeModal('favModal')">&times;</button>
+      </div>
+      <div id="favItemsList" class="fav-list"></div>
+    </div>
+  </div>
+
+  <!-- RO'YXATDAN O'TISH MODALI -->
+  <div class="modal" id="authModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Ro‘yxatdan o‘tish / Kirish</h3>
+        <button class="close-btn" onclick="closeModal('authModal')">&times;</button>
+      </div>
+      <form onsubmit="registerUser(event)" class="order-form">
+        <input type="text" id="regName" placeholder="To‘liq ismingiz" required>
+        <input type="tel" id="regPhone" placeholder="Telefon raqamingiz" required>
+        <input type="password" id="regPass" placeholder="Parol yarating" required>
+        <button type="submit" class="btn-primary full-btn">Saqlash va Kirish</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
